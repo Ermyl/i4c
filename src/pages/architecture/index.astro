@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+
+ <!-- ================= MAIN PANELS ================= -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+
+      <!-- Houses -->
+      <a href="/development/infill/" class="relative group aspect-[1/1] overflow-hidden">
+        <img src="/architecture.jpg" alt="Main Road" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6 md:top-10 md:left-10">
+          <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Houses</h2>
+        </div>
+      </a>
+
+      <!-- Renovation -->
+      <a href="/development/land development/" class="relative group aspect-[1/1] overflow-hidden">
+        <img src="/ihaka.jpg" alt="Ihaka Hakuene" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6 md:top-10 md:left-10">
+          <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Renovation</h2>
+        </div>
+      </a>
+
+     <!-- Town Houses -->
+      <a href="/development/commercial development/" class="relative group aspect-[1/1] overflow-hidden">
+        <img src="/Stellin Street.jpg" alt="Town Houses" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6 md:top-10 md:left-10">
+          <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Town Houses</h2>
+        </div>
+      </a>
+
+      <!-- Commercial -->
+      <a href="/development/commercial development/" class="relative group aspect-[1/1] overflow-hidden">
+        <img src="/titoki.jpg" alt="Titoki Health Centre" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6 md:top-10 md:left-10">
+          <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Commercial</h2>
+        </div>
+      </a>
+
+      <!-- Apartments -->
+<button type="button"
+  class="relative group aspect-[1/1] overflow-hidden text-left"
+  data-img="/kaituna.jpg"
+  data-title="Apartment"
+>
+  <img src="/kaituna.jpg" alt="Interior" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+  <div class="absolute top-6 left-6 md:top-10 md:left-10">
+    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Apartments</h2>
+  </div>
+
+<!-- Interior -->
+<button type="button"
+  class="relative group aspect-[1/1] overflow-hidden text-left"
+  data-img="/interior.jpg"
+  data-title="interior"
+>
+  <img src="/interior.jpg" alt="Interior" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+  <div class="absolute top-6 left-6 md:top-10 md:left-10">
+    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Interior</h2>
+  </div>
+</button>
+
+    </div>
+  </section>
+
+ <!-- Modal -->
+<div id="img-modal" class="hidden fixed inset-0 z-[999]">
+  <div id="img-backdrop" class="absolute inset-0 bg-black/80"></div>
+
+  <div class="relative h-full w-full flex items-center justify-center p-6">
+    <div class="relative max-w-5xl w-full">
+      <button id="img-close" class="absolute -top-10 right-0 text-white text-sm px-3 py-2 border border-white/30 rounded-lg">
+        Close
+      </button>
+      <img id="img-modal-src" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-xl bg-black" />
+      <div id="img-modal-title" class="mt-3 text-white text-sm opacity-90"></div>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+  const modal = document.getElementById("img-modal");
+  const backdrop = document.getElementById("img-backdrop");
+  const closeBtn = document.getElementById("img-close");
+  const modalImg = document.getElementById("img-modal-src");
+  const modalTitle = document.getElementById("img-modal-title");
+
+  function openModal(src, title) {
+    modalImg.src = src;
+    modalImg.alt = title || "Image";
+    modalTitle.textContent = title || "";
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    modalImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-img]").forEach((el) => {
+    el.addEventListener("click", () => {
+      openModal(el.getAttribute("data-img"), el.getAttribute("data-title"));
+    });
+  });
+
+  backdrop.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+  });
+</script>
+
+
+</BaseLayout>
