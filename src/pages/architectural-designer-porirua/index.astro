@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+
+  <!-- Landing Intro -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+
+    <h1 class="text-3xl md:text-4xl font-semibold mb-6">
+      Architectural Design in Porirua
+    </h1>
+
+    <p class="text-lg mb-6">
+      Residential architectural design across Porirua and North Wellington, including new builds, renovations and small-lot subdivision projects.
+    </p>
+
+    <p class="mb-8">
+      Early feasibility and practical advice available before committing to design or engaging consultants.
+    </p>
+
+    <a href="/contact/" class="inline-block px-6 py-3 border border-black rounded-lg">
+      Discuss Your Project
+    </a>
+
+  </section>
+
+ <!-- ================= MAIN PANELS ================= -->
+  <section class="max-w-7xl mx-auto px-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+
+      <!-- Houses -->
+<button type="button"
+  class="relative group aspect-[1/1] overflow-hidden text-left"
+  data-img="/architecture.jpg"
+  data-title="Dow-Leblanc House"
+>
+  <img src="/architecture.jpg" alt="New Build" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+  <div class="absolute top-6 left-6 md:top-10 md:left-10">
+    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">New Build</h2>
+  </div>
+
+      <!-- Renovation -->
+<button type="button"
+  class="relative group aspect-[1/1] overflow-hidden text-left"
+  data-img="/ihaka.jpg"
+  data-title="Horrbin Hodge House Extension"
+>
+  <img src="/ihaka.jpg" alt="Extension" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+  <div class="absolute top-6 left-6 md:top-10 md:left-10">
+    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Renovation</h2>
+  </div>
+
+                 <!-- Town Houses -->
+<button type="button"
+  class="relative group aspect-[1/1] overflow-hidden text-left"
+  data-img="/Stellin Street.jpg"
+  data-title="Boyle Houses"
+>
+  <img src="/Stellin Street.jpg" alt="Town Houses" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+  <div class="absolute top-6 left-6 md:top-10 md:left-10">
+    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wide">Town Houses</h2>
+  </div>
+
+
+    </div>
+  </section>
+
+ <!-- Modal -->
+<div id="img-modal" class="hidden fixed inset-0 z-[999]">
+  <div id="img-backdrop" class="absolute inset-0 bg-black/80"></div>
+
+  <div class="relative h-full w-full flex items-center justify-center p-6">
+    <div class="relative max-w-5xl w-full">
+      <button id="img-close" class="absolute -top-10 right-0 text-white text-sm px-3 py-2 border border-white/30 rounded-lg">
+        Close
+      </button>
+      <img id="img-modal-src" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-xl bg-black" />
+      <div id="img-modal-title" class="mt-3 text-white text-sm opacity-90"></div>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+  const modal = document.getElementById("img-modal");
+  const backdrop = document.getElementById("img-backdrop");
+  const closeBtn = document.getElementById("img-close");
+  const modalImg = document.getElementById("img-modal-src");
+  const modalTitle = document.getElementById("img-modal-title");
+
+  function openModal(src, title) {
+    modalImg.src = src;
+    modalImg.alt = title || "Image";
+    modalTitle.textContent = title || "";
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    modalImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-img]").forEach((el) => {
+    el.addEventListener("click", () => {
+      openModal(el.getAttribute("data-img"), el.getAttribute("data-title"));
+    });
+  });
+
+  backdrop.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+  });
+</script>
+
+
+</BaseLayout>
