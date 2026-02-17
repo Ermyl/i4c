@@ -4,11 +4,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout>
 
-<section class="max-w-5xl mx-auto px-12 py-12 bg-white">
+<section class="max-w-5xl mx-auto px-4 py-0 bg-white">
   <div class="grid md:grid-cols-2 gap-10 items-start">
 
     <!-- LEFT: TEXT (your existing block, only small wrapper change) -->
-    <div>
+    <div class="pt-8 md:pt-14">
 
       <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
         Residential Architecture – Porirua & Kapiti Coast
@@ -67,106 +67,49 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
 
     <!-- RIGHT: PANELS -->
-<div>
-  <div class="flex flex-col">
+    <div class="flex flex-col">
 
-    <!-- New Build -->
-    <button
-      type="button"
-      class="relative group w-full aspect-[16/9] overflow-hidden text-left"
-      data-img="/architecture.jpg"
-      data-title="Dow-Leblanc House"
-    >
-      <img src="/architecture.jpg" alt="New Build" class="absolute inset-0 w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
-      <div class="absolute top-6 left-6">
-        <h2 class="text-white text-2xl font-bold tracking-wide">New Build</h2>
-      </div>
-    </button>
+      <!-- New Build -->
+      <a
+        href="/architecture/new-build/"
+        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block"
+      >
+        <img src="/architecture.jpg" alt="New Build" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6">
+          <h2 class="text-white text-2xl font-bold tracking-wide">New Build</h2>
+        </div>
+      </a>
 
-    <!-- Renovation -->
-    <button
-      type="button"
-      class="relative group w-full aspect-[16/9] overflow-hidden text-left"
-      data-img="/ihaka.jpg"
-      data-title="Horrbin Hodge House Extension"
-    >
-      <img src="/ihaka.jpg" alt="Renovation" class="absolute inset-0 w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
-      <div class="absolute top-6 left-6">
-        <h2 class="text-white text-2xl font-bold tracking-wide">Renovation</h2>
-      </div>
-    </button>
+      <!-- Renovation -->
+      <a
+        href="/architecture/renovation/"
+        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block"
+      >
+        <img src="/ihaka.jpg" alt="Renovation" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6">
+          <h2 class="text-white text-2xl font-bold tracking-wide">Renovation</h2>
+        </div>
+      </a>
 
-    <!-- Town Houses -->
-    <button
-      type="button"
-      class="relative group w-full aspect-[16/9] overflow-hidden text-left"
-      data-img="/Stellin Street.jpg"
-      data-title="Boyle Houses"
-    >
-      <img src="/Stellin Street.jpg" alt="Town Houses" class="absolute inset-0 w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
-      <div class="absolute top-6 left-6">
-        <h2 class="text-white text-2xl font-bold tracking-wide">Town Houses</h2>
-      </div>
-    </button>
+      <!-- Town Houses -->
+      <a
+        href="/architecture/townhouses/"
+        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block"
+      >
+        <img src="/Stellin Street.jpg" alt="Town Houses" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6">
+          <h2 class="text-white text-2xl font-bold tracking-wide">Town Houses</h2>
+        </div>
+      </a>
 
-  </div>
-</div>
-
-
+    </div>
 
   </div>
 </section>
 
-<!-- Modal (unchanged) -->
-<div id="img-modal" class="hidden fixed inset-0 z-[999]">
-  <div id="img-backdrop" class="absolute inset-0 bg-black/80"></div>
 
-  <div class="relative h-full w-full flex items-center justify-center p-6">
-    <div class="relative max-w-5xl w-full">
-      <button id="img-close" class="absolute -top-10 right-0 text-white text-sm px-3 py-2 border border-white/30 rounded-lg">
-        Close
-      </button>
-      <img id="img-modal-src" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-xl bg-black" />
-      <div id="img-modal-title" class="mt-3 text-white text-sm opacity-90"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-  const modal = document.getElementById("img-modal");
-  const backdrop = document.getElementById("img-backdrop");
-  const closeBtn = document.getElementById("img-close");
-  const modalImg = document.getElementById("img-modal-src");
-  const modalTitle = document.getElementById("img-modal-title");
-
-  function openModal(src, title) {
-    modalImg.src = src;
-    modalImg.alt = title || "Image";
-    modalTitle.textContent = title || "";
-    modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal() {
-    modal.classList.add("hidden");
-    modalImg.src = "";
-    document.body.style.overflow = "";
-  }
-
-  document.querySelectorAll("[data-img]").forEach((el) => {
-    el.addEventListener("click", () => {
-      openModal(el.getAttribute("data-img"), el.getAttribute("data-title"));
-    });
-  });
-
-  backdrop.addEventListener("click", closeModal);
-  closeBtn.addEventListener("click", closeModal);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
-  });
-</script>
 
 </BaseLayout>
