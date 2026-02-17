@@ -35,6 +35,76 @@ import "../styles/global.css";
       <slot />
     </main>
 
+    <!-- Smart Back Button -->
+<button
+  id="smartBack"
+  aria-label="Back"
+  style="
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: none;
+  "
+>
+  <svg
+    viewBox="0 0 24 24"
+    width="35"
+    height="35"
+    fill="none"
+    stroke="white"
+    stroke-width="3"
+    stroke-linecap="butt"
+    stroke-linejoin="miter"
+    style="
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+    "
+  >
+    <path d="M15 18 L8.5 12 L15 6" />
+  </svg>
+</button>
+
+
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById("smartBack");
+    if (!btn) return;
+
+    const ref = document.referrer || "";
+    const host = window.location.hostname;
+    const isInternalReferrer = ref.includes(host);
+
+    const isHome = window.location.pathname === "/";
+
+    // Show on all non-home pages
+    if (!isHome) btn.style.display = "block";
+
+
+    btn.addEventListener("click", () => {
+      if (isInternalReferrer) {
+        window.history.back();
+      } else {
+        window.location.href = "/";
+      }
+    });
+  })();
+</script>
+
+
+
     <Footer />
   </body>
 </html>

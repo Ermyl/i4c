@@ -8,7 +8,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <div class="grid md:grid-cols-2 gap-10 items-start">
 
     <!-- LEFT: TEXT (your existing block, only small wrapper change) -->
-    <div class="pt-8 md:pt-14">
+    <div class="pt-8 md:pt-14 order-2 md:order-1">
 
       <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
         Residential Architecture – Porirua & Kapiti Coast
@@ -19,20 +19,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
 
       <p class="mt-3 text-sm leading-relaxed text-slate-500">
-        We provide residential architectural design with a strong emphasis on early feasibility,
+          We provide residential architectural design with a strong emphasis client's relationship, early feasibility,
         planning realism, and practical build outcomes.
       </p>
 
-      <!-- Approach -->
       <div class="mt-6">
         <h2 class="text-lg font-medium text-slate-900">Approach</h2>
 
         <div class="mt-2 space-y-4 text-sm leading-relaxed text-slate-500">
           <p>
-            Projects begin with feasibility — understanding site constraints, planning pathways,
+            Projects begin with the client's vision, then understanding site constraints, planning pathways, feasibility
             and likely construction budget range before committing to full design.
           </p>
-          <p>
+           <p>
             We guide projects through concept development, council documentation,
             and consent coordination with clarity and structure.
           </p>
@@ -67,7 +66,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
 
     <!-- RIGHT: PANELS -->
-    <div class="flex flex-col">
+    <div class="flex flex-col order-1 md:order-2">
 
       <!-- New Build -->
       <a

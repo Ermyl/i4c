@@ -1,0 +1,218 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+
+<section class="max-w-5xl mx-auto px-4 py-0 bg-white">
+  <div class="grid md:grid-cols-2 gap-10 items-start">
+
+    <!-- LEFT: TEXT -->
+<div class="pt-8 md:pt-14 order-2 md:order-1">
+
+  <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
+    Renovations & Extensions – Porirua & Kapiti Coast
+  </h1>
+
+  <p class="mt-2 text-sm leading-relaxed text-slate-700">
+    Working across Porirua, Tawa, Aotea, Whitby, Plimmerton and the Kapiti Coast.
+  </p>
+
+  <p class="mt-3 text-sm leading-relaxed text-slate-500">
+    Renovating or extending an existing home requires clarity, technical understanding and careful integration — balancing new design with existing structure, compliance and build complexity.
+  </p>
+
+  <div class="mt-6">
+    <h2 class="text-lg font-medium text-slate-900">Approach</h2>
+
+    <div class="mt-2 space-y-4 text-sm leading-relaxed text-slate-500">
+      <p>
+        Projects begin with understanding how you want the home to function differently — more space, better light, improved connection to outdoor areas, or reworking internal flow.
+      </p>
+
+      <p>
+        We assess existing conditions early — structure, services, planning controls and likely construction implications — so the design evolves with realism and cost awareness.
+      </p>
+
+      <p>
+        Clients remain actively involved throughout the process — reviewing options, understanding trade-offs and making informed decisions as documentation progresses toward consent.
+      </p>
+
+      <p>
+        Where required, we remain engaged during construction in a client-side advisory or coordination role through to completion and handover.
+      </p>
+    </div>
+  </div>
+
+  <!-- Direct Contact -->
+  <div class="mt-6">
+    <h2 class="text-lg font-medium text-slate-900">Discuss Your Renovation</h2>
+
+    <div class="mt-2 text-sm leading-relaxed text-slate-500">
+      <p>
+        Phone: <a href="tel:0213938361" class="underline">021 39 38 361</a>
+      </p>
+      <p class="mt-1">
+        Email: <a href="mailto:info@i4c.co.nz" class="underline">info@i4c.co.nz</a>
+      </p>
+    </div>
+
+    <div class="mt-4">
+      <a href="tel:0213938361" class="inline-block px-6 py-3 border border-black rounded-lg text-sm font-medium">
+        Call to Discuss
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+    <!-- RIGHT: PANELS (LAYOUT UNCHANGED) -->
+    <div class="flex flex-col order-1 md:order-2">
+
+      <button
+        type="button"
+        data-img="/ihaka.jpg"
+        data-title="Hodge & Horrobin"
+        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+      >
+        <img src="/ihaka.jpg" alt="New Build" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6">
+          <h2 class="text-white text-2xl font-bold tracking-wide">Hodge & Horrobin</h2>
+        </div>
+      </button>
+
+      <button
+  type="button"
+  data-img="/hutting.jpg"
+    data-title="Hutting Extension"
+  class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+>
+
+        <img src="/hutting.jpg" alt="Renovation" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6">
+          <h2 class="text-white text-2xl font-bold tracking-wide">Hutting</h2>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        data-img="/dow-extension.jpg"
+        data-title="Dow Extension"
+        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+      >
+        <img src="/dow-extension.jpg" alt="Town Houses" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute top-6 left-6">
+          <h2 class="text-white text-2xl font-bold tracking-wide">Dow Extension</h2>
+        </div>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="img-modal" class="hidden fixed inset-0 z-[999]">
+  <div id="img-backdrop" class="absolute inset-0 bg-black/80"></div>
+
+  <div class="relative h-full w-full flex items-center justify-center p-6">
+    <div id="img-modal-inner" class="relative w-full max-w-6xl">
+
+
+      <button
+        id="img-close"
+        class="absolute -top-10 right-0 text-white text-sm px-3 py-2 border border-white/30 rounded-lg"
+      >
+        Close
+      </button>
+
+      <!-- IMAGE GRID -->
+<div id="img-modal-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <img
+    id="img-modal-src"
+    src=""
+    alt=""
+    class="w-full max-h-[85vh] object-contain bg-black"
+  />
+  <img
+    id="img-modal-src2"
+    src=""
+    alt=""
+    class="w-full max-h-[85vh] object-contain bg-black hidden"
+  />
+</div>
+
+
+      <div
+        id="img-modal-title"
+        class="mt-3 text-white text-sm opacity-90"
+      ></div>
+
+    </div>
+  </div>
+</div>
+
+
+<script is:inline>
+  const modal = document.getElementById("img-modal");
+  const backdrop = document.getElementById("img-backdrop");
+  const closeBtn = document.getElementById("img-close");
+
+  const grid = document.getElementById("img-modal-grid");
+  const img1 = document.getElementById("img-modal-src");
+  const img2 = document.getElementById("img-modal-src2");
+  const titleEl = document.getElementById("img-modal-title");
+
+  function openModal(src1, src2, title) {
+    img1.src = src1 || "";
+    img1.alt = title || "";
+
+    if (src2) {
+      img2.src = src2;
+      img2.alt = title || "";
+      img2.classList.remove("hidden");
+      grid.classList.add("md:grid-cols-2");
+      grid.classList.remove("md:grid-cols-1");
+    } else {
+      img2.src = "";
+      img2.classList.add("hidden");
+      grid.classList.add("md:grid-cols-1");
+      grid.classList.remove("md:grid-cols-2");
+    }
+
+    titleEl.textContent = title || "";
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    img1.src = "";
+    img2.src = "";
+    img2.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-img]").forEach((el) => {
+    el.addEventListener("click", () => {
+      openModal(el.dataset.img, el.dataset.img2, el.dataset.title);
+    });
+  });
+
+  backdrop.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+  });
+</script>
+
+
+
+
+</BaseLayout>
