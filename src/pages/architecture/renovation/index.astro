@@ -8,83 +8,95 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   <div class="grid md:grid-cols-2 gap-10 items-start">
 
     <!-- LEFT: TEXT -->
-    <div class="pt-8 md:pt-14 order-2 md:order-1">
+<div class="order-2 md:order-1 contents md:block md:pt-14">
 
-      <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
-        Renovations & Extensions – Porirua & Kapiti Coast
-      </h1>
+  <!-- MOBILE: after Image 1 -->
+  <div class="order-2 pt-0">
+    <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
+      Renovations & Extensions – Porirua & Kapiti Coast
+    </h1>
 
-      <p class="mt-2 text-sm leading-relaxed text-slate-700">
-        Working across Porirua, Tawa, Aotea, Whitby, Plimmerton and the Kapiti Coast.
+    <p class="mt-2 text-sm leading-relaxed text-slate-700">
+      Working across Porirua, Tawa, Aotea, Whitby, Plimmerton and the Kapiti Coast.
+    </p>
+  </div>
+
+  <!-- MOBILE: Contact block -->
+  <div class="order-3 mt-0 md:mt-4">
+    <div class="rounded-lg border border-slate-200 bg-white p-4">
+
+      <p class="text-sm text-slate-700">
+        Discuss your renovation.
       </p>
 
-      <!-- NEW: Calm CTA block (above the fold) -->
-      <div class="mt-4 rounded-lg border border-slate-200 bg-white p-4">
-        <p class="text-sm text-slate-700">
-          Discuss your renovation.
+      <div class="mt-2 text-sm text-slate-700 space-y-1">
+        <p>
+          Phone:
+          <a href="tel:027393861" class="font-medium underline underline-offset-2">
+            027 39 38 361
+          </a>
         </p>
-
-        <div class="mt-2 text-sm text-slate-700 space-y-1">
-          <p>
-            Phone:
-            <a href="tel:027393861" class="font-medium underline underline-offset-2">
-              027 39 38 361
-            </a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@i4c.co.nz" class="font-medium underline underline-offset-2">
-              info@i4c.co.nz
-            </a>
-          </p>
-        </div>
-
-        <a
-          href="tel:027393861"
-          class="inline-flex mt-3 items-center justify-center rounded-md border border-slate-900 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-900 hover:text-white transition"
-        >
-          Call to Discuss
-        </a>
+        <p>
+          Email:
+          <a href="mailto:info@i4c.co.nz" class="font-medium underline underline-offset-2">
+            info@i4c.co.nz
+          </a>
+        </p>
       </div>
 
-      <p class="mt-4 text-sm leading-relaxed text-slate-500">
-        Renovating or extending an existing home requires clarity, technical understanding and careful integration — balancing new design with existing structure, compliance and build complexity.
-      </p>
-
-      <div class="mt-6">
-        <h2 class="text-lg font-medium text-slate-900">Approach</h2>
-
-        <div class="mt-2 space-y-4 text-sm leading-relaxed text-slate-500">
-          <p>
-            Projects begin with understanding how you want the home to function differently — more space, better light, improved connection to outdoor areas, or reworking internal flow.
-          </p>
-
-          <p>
-            We assess existing conditions early — structure, services, planning controls and likely construction implications — so the design evolves with realism and cost awareness.
-          </p>
-
-          <p>
-            Clients remain actively involved throughout the process — reviewing options, understanding trade-offs and making informed decisions as documentation progresses toward consent.
-          </p>
-
-          <p>
-            Where required, we remain engaged during construction in a client-side advisory or coordination role through to completion and handover.
-          </p>
-        </div>
-      </div>
+      <a
+        href="tel:027393861"
+        class="inline-flex mt-3 items-center justify-center rounded-md border border-slate-900 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-900 hover:text-white transition"
+      >
+        Call to Discuss
+      </a>
 
     </div>
+  </div>
+
+  <!-- MOBILE: After Image 2 + Image 3 -->
+  <div class="order-6 mt-4 md:mt-6 pb-10 md:pb-0">
+
+    <p class="text-sm leading-relaxed text-slate-500">
+      Renovating or extending an existing home requires clarity, technical understanding and careful integration — balancing new design with existing structure, compliance and build complexity.
+    </p>
+
+    <div class="mt-6">
+      <h2 class="text-lg font-medium text-slate-900">Approach</h2>
+
+      <div class="mt-2 space-y-4 text-sm leading-relaxed text-slate-500">
+        <p>
+          Projects begin with understanding how you want the home to function differently — more space, better light, improved connection to outdoor areas, or reworking internal flow.
+        </p>
+
+        <p>
+          We assess existing conditions early — structure, services, planning controls and likely construction implications — so the design evolves with realism and cost awareness.
+        </p>
+
+        <p>
+          Clients remain actively involved throughout the process — reviewing options, understanding trade-offs and making informed decisions as documentation progresses toward consent.
+        </p>
+
+        <p>
+          Where required, we remain engaged during construction in a client-side advisory or coordination role through to completion and handover.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 
     <!-- RIGHT: PANELS (LAYOUT UNCHANGED) -->
-    <div class="flex flex-col order-1 md:order-2">
+    <div class="order-1 md:order-2 contents md:flex md:flex-col">
 
       <button
         type="button"
         data-img="/ihaka.jpg"
         data-img2="/ihaka2.jpg"
         data-title="Hodge & Horrobin - Under Construction"
-        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+        class="order-1 md:order-none relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
       >
         <img src="/ihaka.jpg" alt="Extension" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
@@ -97,7 +109,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   type="button"
   data-img="/hutting.jpg"
     data-title="Hutting Extension"
-  class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+  class="order-4 md:order-none relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
 >
 
         <img src="/hutting.jpg" alt="Renovation" class="absolute inset-0 w-full h-full object-cover" />
@@ -111,7 +123,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
         type="button"
         data-img="/dow-extension.jpg"
         data-title="Dow Extension"
-        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+        class="order-5 md:order-none relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
       >
         <img src="/dow-extension.jpg" alt="Town Houses" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>

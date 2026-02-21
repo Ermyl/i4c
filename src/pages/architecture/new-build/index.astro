@@ -7,88 +7,98 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 <section class="max-w-5xl mx-auto px-4 py-0 bg-white">
   <div class="grid md:grid-cols-2 gap-10 items-start">
 
-    <!-- LEFT: TEXT -->
-<div class="pt-8 md:pt-14 order-2 md:order-1">
+<!-- LEFT: TEXT -->
+<div class="order-2 md:order-1 contents md:block md:pt-14">
 
-  <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
-    New Build Residential Design – Porirua & Kapiti Coast
-  </h1>
+  <!-- MOBILE: after Image 1 -->
+  <div class="order-2 pt-0">
+    <h1 class="text-2xl sm:text-2xl font-medium text-slate-900">
+      New Build Residential Design – Porirua & Kapiti Coast
+    </h1>
 
-  <p class="mt-2 text-sm leading-relaxed text-slate-700">
-    Based in Porirua, working across Tawa, Aotea, Whitby, Plimmerton and the Kapiti Coast.
-  </p>
-
-  <!-- Framed Contact Block -->
-  <div class="mt-4 border border-slate-200 rounded-lg p-5 bg-white">
-
-    <p class="text-sm text-slate-700">
-      Discuss your new home before committing to design or build.
+    <p class="mt-2 text-sm leading-relaxed text-slate-700">
+      Based in Porirua, working across Tawa, Aotea, Whitby, Plimmerton and the Kapiti Coast.
     </p>
-
-    <div class="mt-3 text-sm text-slate-700 space-y-1">
-      <p>
-        Phone:
-        <a href="tel:0273938361" class="underline font-medium">
-          027 39 38 361
-        </a>
-      </p>
-      <p>
-        Email:
-        <a href="mailto:info@i4c.co.nz" class="underline font-medium">
-          info@i4c.co.nz
-        </a>
-      </p>
-    </div>
-
-    <a
-      href="tel:0273938361"
-      class="inline-block mt-4 px-6 py-3 border border-black rounded-lg text-sm font-medium hover:bg-black hover:text-white transition"
-    >
-      Call to Discuss
-    </a>
-
   </div>
 
-  <p class="mt-6 text-sm leading-relaxed text-slate-500">
-    Residential architectural design delivered through a structured process grounded in site realities, planning clarity and construction logic — supporting strong design outcomes with practical delivery.
-  </p>
+  <!-- MOBILE: Contact block -->
+  <div class="order-3 mt-0 md:mt-4">
+    <div class="border border-slate-200 rounded-lg p-5 bg-white">
 
-  <div class="mt-8">
-    <h2 class="text-lg font-medium text-slate-900">Approach</h2>
-
-    <div class="mt-2 space-y-4 text-sm leading-relaxed text-slate-500">
-      <p>
-        Every project begins with a conversation — how you want to live, how the site performs, and the investment framework that supports the build. Design decisions evolve alongside cost understanding, not after it.
+      <p class="text-sm text-slate-700">
+        Discuss your new home before committing to design or build.
       </p>
 
-      <p>
-        Planning controls, access, services, site constraints and indicative construction range are reviewed early so the concept develops with clarity rather than assumption.
-      </p>
+      <div class="mt-3 text-sm text-slate-700 space-y-1">
+        <p>
+          Phone:
+          <a href="tel:0273938361" class="underline font-medium">
+            027 39 38 361
+          </a>
+        </p>
+        <p>
+          Email:
+          <a href="mailto:info@i4c.co.nz" class="underline font-medium">
+            info@i4c.co.nz
+          </a>
+        </p>
+      </div>
 
-      <p>
-        Clients remain actively involved — reviewing options, understanding trade-offs, and making informed decisions through concept development, documentation and consent.
-      </p>
+      <a
+        href="tel:0273938361"
+        class="inline-block mt-4 px-6 py-3 border border-black rounded-lg text-sm font-medium hover:bg-black hover:text-white transition"
+      >
+        Call to Discuss
+      </a>
 
-      <p>
-        Where required, engagement can continue during construction in a client-side advisory or coordination role through to completion and handover.
-      </p>
     </div>
+  </div>
+
+  <!-- MOBILE: After Image 2 + Image 3 -->
+  <div class="order-6 mt-4 md:mt-6 pb-10 md:pb-0">
+
+    <p class="text-sm leading-relaxed text-slate-500">
+      Residential architectural design delivered through a structured process grounded in site realities, planning clarity and construction logic — supporting strong design outcomes with practical delivery.
+    </p>
+
+    <div class="mt-8">
+      <h2 class="text-lg font-medium text-slate-900">Approach</h2>
+
+      <div class="mt-2 space-y-4 text-sm leading-relaxed text-slate-500">
+        <p>
+          Every project begins with a conversation — how you want to live, how the site performs, and the investment framework that supports the build. Design decisions evolve alongside cost understanding, not after it.
+        </p>
+
+        <p>
+          Planning controls, access, services, site constraints and indicative construction range are reviewed early so the concept develops with clarity rather than assumption.
+        </p>
+
+        <p>
+          Clients remain actively involved — reviewing options, understanding trade-offs, and making informed decisions through concept development, documentation and consent.
+        </p>
+
+        <p>
+          Where required, engagement can continue during construction in a client-side advisory or coordination role through to completion and handover.
+        </p>
+      </div>
+    </div>
+
   </div>
 
 </div>
 
 
 
-<!-- RIGHT: PANELS (LAYOUT UNCHANGED) -->
+<!-- RIGHT: PANELS -->
 
-    <div class="flex flex-col order-1 md:order-2">
+    <div class="order-1 md:order-2 contents md:flex md:flex-col">
 
       <button
         type="button"
         data-img="/architecture.jpg"
         data-img2="/dow-interior.jpg"
         data-title="New Build"
-        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+        class="order-1 md:order-none relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
       >
         <img src="/architecture.jpg" alt="New Build" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
@@ -102,7 +112,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
   data-img="/oconnor.jpg"
   data-img2="/oconnor2.jpg"
   data-title="O'Connor"
-  class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+  class="order-4 md:order-none relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
 >
 
         <img src="/oconnor.jpg" alt="Renovation" class="absolute inset-0 w-full h-full object-cover" />
@@ -116,7 +126,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
         type="button"
         data-img="/kapiti house.jpg"
         data-title="Matatua house - Built"
-        class="relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
+        class="order-5 md:order-none relative group w-full aspect-square md:aspect-[4/3] overflow-hidden block text-left"
       >
         <img src="/kapiti house.jpg" alt="Kapiti" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
